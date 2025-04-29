@@ -17,11 +17,10 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<UserEntity> add(@RequestBody UserEntity user){
-        UserEntity userEntity = userRepository.save(user);
+    @GetMapping("/hello")
+    public ResponseEntity<?> getHello(@RequestBody UserEntity user){
 
-        return ResponseEntity.ok(userEntity);
+        return ResponseEntity.ok("Hello World");
     }
 
     @GetMapping("/getAll")
