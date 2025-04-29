@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: ilkin-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: db123
+      POSTGRES_DB: ilkin-db
+    ports:
+      - "5440:5432"
+    networks:
+        - ilkin-network
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  backend:
+      #    image: ghcr.io/${GITHUB_REPO_OWNER}/ilkin-demo-docker:${TAG}
+      build:
+        context: .
+        dockerfile: Dockerfile
+      container_name: ilkin-demo-db
+      depends_on:
+        - db
+      ports:
+        - "8030:8020"
+      environment:
+        SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/ilkin-db
+        SPRING_DATASOURCE_USERNAME: postgres
+        SPRING_DATASOURCE_PASSWORD: db123
+        SPRING_PROFILES_ACTIVE: dev
+      networks:
+        - ilkin-network
+
+networks:
+  ilkin-network:
+    driver: bridge
+
+volumes:
+  db-data:
+    driver: local
