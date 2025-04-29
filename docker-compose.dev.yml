@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: db123
       POSTGRES_DB: ilkin-db
     ports:
-      - "5444:5432"
+      - "5440:5432"
     networks:
         - ilkin-network
     volumes:
