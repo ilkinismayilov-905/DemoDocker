@@ -24,7 +24,7 @@ services:
       depends_on:
         - db
       ports:
-        - "8030:8020"
+        - "8039:8029"
       environment:
         SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/ilkin-db
         SPRING_DATASOURCE_USERNAME: postgres
