@@ -20,5 +20,5 @@ public class UserEntity {
     private Long id;
 
     private String name;
-    private String suremane;
+    private String surename;
 }
