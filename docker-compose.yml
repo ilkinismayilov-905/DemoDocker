@@ -16,7 +16,7 @@ services:
       - db-data:/var/lib/postgresql/data
 
   backend:
-      #    image: ghcr.io/${GITHUB_REPO_OWNER}/ilkin-demo-docker:${TAG}
+      image: ghcr.io/${GITHUB_REPO_OWNER}/ilkin-demo-docker:${TAG}
       build:
         context: .
         dockerfile: Dockerfile
