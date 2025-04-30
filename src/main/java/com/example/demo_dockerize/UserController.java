@@ -18,7 +18,7 @@ public class UserController {
     }
 
     @GetMapping("/hello")
-    public ResponseEntity<?> getHello(@RequestBody UserEntity user){
+    public ResponseEntity<?> getHello(){
 
         return ResponseEntity.ok("Hello World");
     }
