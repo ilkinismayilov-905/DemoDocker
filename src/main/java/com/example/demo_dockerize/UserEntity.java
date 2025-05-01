@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @Data
-@Entity(name = "user")
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserEntity {

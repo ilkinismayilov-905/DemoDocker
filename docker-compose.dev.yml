@@ -19,9 +19,9 @@ services:
 
   backend:
       image: ghcr.io/${GITHUB_REPO_OWNER}/ilkin-demo-docker:${TAG}
-      build:
-        context: .
-        dockerfile: Dockerfile
+#      build:
+#        context: .
+#        dockerfile: Dockerfile
       container_name: ilkin-demo-db
       depends_on:
         - db
